@@ -2,25 +2,20 @@
 
 This README outlines the details of collaborating on this Ember addon.
 
-## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+To get up and running quickly, do the following:
 
-## Running
+Ensure ember-cli-deploy-build is installed and configured.
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Install this plugin
 
-## Running Tests
+$ ember install ember-cli-deploy-tenxu
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+Place the following configuration into config/deploy.js
+ENV.tenxu = {
+  accessKeyId: '<your-oss-access-key>',
+  secretAccessKey: '<your-oss-secret>',
+  bucket: '<your-oss-bucket>'
+}
+Run the pipeline
+$ ember deploy
